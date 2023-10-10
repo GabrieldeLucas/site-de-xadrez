@@ -170,6 +170,27 @@ td, th {
 
     </style>
 </head>
+    <body>
+    <audio id="myAudio" loop>
+        <source src="audio.mp3" type="audio/mp3">
+        Seu navegador não suporta a reprodução de áudio.
+    </audio>
+
+    <script>
+        const audio = document.getElementById("myAudio");
+        let audioPlaying = false;
+
+        // Função para iniciar a reprodução de áudio quando o usuário clica
+        function playAudio() {
+            if (!audioPlaying) {
+                audio.play(); // Inicia a reprodução da música em loop
+                audioPlaying = true;
+            }
+        }
+
+        // Adiciona um ouvinte de eventos para o clique em qualquer parte da página
+        document.addEventListener("click", playAudio);
+    </script></body>
 <body class="neve">
     <header class="header">
                 <a href="socorro.html" class="logo">ChessMe</a>
