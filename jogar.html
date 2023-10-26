@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,12 +13,19 @@
 <style>
     @charset "utf-8";
 /* CSS Document */
-* { 
-    background-color: black;
-            margin: 0;
-            padding: 0;
-            font-family: "Poppins", sans-serif;
-        }
+.neve{width:100%; height:100%; position:absolute;}
+                .neve{
+                      background-color: black;
+                      background-image: url('snow1.png'), url('snow2.png'), url('snow3.png');  
+                      animation: snow 20s linear infinite;
+					  font-family: "Poppins", sans-serif;
+                          }     
+                 @keyframes snow {
+                            0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+                            100% {background-position: 500px 1000px, 400px 400px, 300px 300px}
+                                 }
+            
+        
 .borda{border:#F00;}
 .tabPreto{background:#03C;}
 body {
@@ -145,7 +151,7 @@ div{ cursor:pointer;}
         // Adiciona um ouvinte de eventos para o clique em qualquer parte da página
         document.addEventListener("click", playAudio);
     </script></body>
-<body onload="inicia_jogo();"><br><br>
+<body class="neve" onload="inicia_jogo();"><br><br>
     <header class="header">
         <a href="inicio.html" class="logo">ChessMe</a>
 <nav class="navbar">
