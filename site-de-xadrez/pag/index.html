@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300;500&family=Didact+Gothic&family=Libre+Franklin:wght@300&family=Poppins&family=Red+Hat+Display:wght@400;500&family=Urbanist&display=swap" rel="stylesheet">
+    <title>Site de Xadrez</title>
+    <style>
+
+        /* Reset de estilos para remover margens e preenchimentos padrão */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        .neve{width:100%; height:100%; position:absolute;}
+                .neve{
+                      background-color: black;
+                      background-image: url('snow1.png'), url('snow2.png'), url('snow3.png');  
+                      animation: snow 20s linear infinite;
+                          }     
+                 @keyframes snow {
+                            0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+                            100% {background-position: 500px 1000px, 400px 400px, 300px 300px}
+                                 }
+        /* Estilos para o corpo da página */
+        body {
+            
+            background-position: center;
+            background-position: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos para o cabeçalho (header) */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.3rem;
+            background: rgba(45, 24, 17, 0.2);
+            backdrop-filter: blur(8px);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            z-index: 100;
+            
+        }
+        .logo {
+          font-size:2rem;
+          color: #FFF;
+          text-decoration: none;
+          font-weight: 700;
+          transition: 0.6s;
+          text-shadow: #FFF 0 0 30px;
+        }
+        .logo:hover {
+            color: #000000;
+            text-shadow: #ffffff 0 0 30px;
+            transition: 0.6s;
+        }
+        .navbar a {
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 550;
+            margin-left: 2.9rem;
+            transition: 1s;
+        }
+        .navbar a:hover {
+            font-size: 1.6rem;
+            text-decoration: none;
+            font-weight: 900;
+            font-style: bold;
+            text-shadow: #fff 0 0 20px;
+            transition: 0.3s;
+        
+            
+        }
+        
+        h1 { 
+            font-size: 3.4rem;
+            color: #FFF;
+            text-align: center;  
+            text-shadow: 
+               -1px -1px 0px #000000, 
+               -1px 1px 0px #000000,                    
+                1px -1px 0px #000000,                  
+                1px 0px 0px #000000;
+                text-shadow: #000 0 0 40px;
+        }
+        b {
+            font-style: bold;
+            font-style: italic;
+            text-shadow: #FFF 0 0 30px ;
+            transition: 0.6s;
+            text-decoration:solid;
+        }
+        b:hover {
+            color: black;
+            transition: 0.6s;
+            font-size: 3.9rem ;
+            font-style: bold;
+            ;
+        }
+
+        p.paragrafo {
+    color: rgb(244, 244, 244);
+        padding: 5px;
+        text-align:center;
+        font-size: 1.4rem;
+        margin: 2.7%;
+        padding: 30px;
+        border-radius: 10px;
+        background: #36302eee;
+        box-shadow: inset 16px 16px 49px #626060,
+            inset -16px -16px 49px #0e0d0d;
+            text-shadow: #FFF 0 0 40px;
+        
+}
+
+        h1.caixa {
+            background-color: rgb(211, 209, 203); 
+            text-shadow:none;
+               
+        padding: 5px;
+        text-align:justify;
+        color: #000000;
+        font-size: 2rem;
+        
+        }
+        .subtitulo2{
+            font-size: 2.5rem;
+            color: #FFF;
+            text-align: center;  
+            text-shadow: 
+               -1px -1px 0px #000000, 
+               -1px 1px 0px #000000,                    
+                1px -1px 0px #000000,                  
+                1px 0px 0px #000000;
+                text-shadow: #000 0 0 40px;
+        
+        }
+        
+    
+        
+
+    </style>
+</head>
+    <body>
+    <audio id="myAudio" loop>
+        <source src="audio.mp3" type="audio/mp3">
+        Seu navegador não suporta a reprodução de áudio.
+    </audio>
+
+    <script>
+        const audio = document.getElementById("myAudio");
+        let audioPlaying = false;
+
+        // Função para iniciar a reprodução de áudio quando o usuário clica
+        function playAudio() {
+            if (!audioPlaying) {
+                audio.play(); // Inicia a reprodução da música em loop
+                audioPlaying = true;
+            }
+        }
+
+        // Adiciona um ouvinte de eventos para o clique em qualquer parte da página
+        document.addEventListener("click", playAudio);
+    </script></body>
+<body class="neve">
+    <header class="header">
+                <a href="#" class="logo">ChessMe</a>
+        <nav class="navbar">
+
+                <a href="index.html">Home</a>
+                <a href="historia.html">História</a>
+                <a href="form.html">Competir</a>
+                <a href="aprenda.html">Aprenda a jogar</a>
+                <a href="jogar.html">Jogar!</a>
+                <a href="ensinamentos.html"> Ensinamentos do Xadrez</a>
+        </nav>
+    </header><br><br><br><br><br><br><br><br><br><br>
+    <h1> Xadrez. Onde a <b>mente</b> é a única fronteira.</h1>
+    <br><br><br><br><br><br> <br><br><br><br><br><br> <br><br><br><br><br><br>
+    <div class="container">
+        <h1>Postura e Respiração</h1>
+        <p class="paragrafo">O xadrez tem muito a ensinar sobre meditação, sabia?
+        Para jogar, é recomendável postura ereta, respiração ritmada – inspirar pelo
+        nariz e expirar pela boca – e concentração absoluta no tabuleiro. É preciso tentar
+        não deixar fatores externos – barulho, preocupações, pensamentos invasivos –
+        atrapalharem sua jogada.<br> - Uma postura ereta ajuda a manter a concentração e a alerta mental. Sentar-se corretamente pode evitar a sensação de fadiga e desconforto, o que é importante para partidas longas.
+        <br><br>
+        - A respiração profunda e ritmada ajuda a acalmar os nervos e a reduzir a ansiedade. Isso é crucial em momentos críticos durante uma partida de xadrez, quando a pressão está alta.
+        <br><br>
+        - A concentração absoluta no tabuleiro é fundamental para o xadrez. Uma postura ereta e uma técnica de respiração adequada podem ajudar a evitar que fatores externos, como barulhos e distrações, atrapalhem seu jogo.
+        <br><br>
+        - Uma mente calma e focada é mais capaz de tomar decisões lógicas e estratégicas no xadrez. A respiração adequada ajuda a manter o cérebro oxigenado, melhorando a clareza mental.
+        <br><br>
+        - Alguns jogadores usam a respiração como um ritmo para suas jogadas. Inspirar e expirar podem ser usados como um "metrônomo mental" para manter um ritmo consistente.
+        <br><br>
+        - O xadrez pode ser emocionalmente intenso, especialmente em partidas competitivas. Uma boa postura e a respiração adequada podem ajudar a gerenciar o estresse e a pressão.
+        <br><br>
+        - Em torneios de xadrez, as partidas podem ser longas. Manter uma postura confortável e uma respiração adequada ajuda a sustentar a energia e o foco ao longo do jogo.
+
+    </p><br><br>
+
+        <h1>Que tipo de guerra é essa? A origem do xadrez</h1>
+        <p class="paragrafo">Embora o xadrez tenha essa referência à guerra – tem as torres, um rei,
+        bispo, cavalo (como se fosse a cavalaria), tem peão (que seria a infantaria) –
+        não existe essa noção de “combate” no jogo. A guerra é muito mais de você com
+        você mesmo.
+        É interessante também analisar as origens do xadrez. Imagine, se você quiser, o chaturanga indiano 
+        original, a raiz do xadrez. Nasceu das mentes inquietas de antigos pensadores, como um reflexo 
+        do universo em constante movimento. Cada peça, uma representação simbólica da ordem e do caos, 
+        do poder e da humildade.<br> O tabuleiro, um microcosmo da vida, um campo de batalha para nossas
+         ambições e estratégias.<br>
+         O xadrez é um jogo estratégico que teve origem na Índia, por volta do século VI d.C.
+        , conhecido como "chaturanga". <br><br>
+        Ao longo dos séculos, ele viajou para a Pérsia, onde se tornou "shatranj", 
+        e depois chegou à Europa medieval, onde evoluiu para o xadrez moderno.<br><Br>
+         O jogo reflete a mente humana em sua busca pela excelência,
+          pelo autoconhecimento e pela competição intelectual.<br><br>
+           Cada partida é uma história única, onde os jogadores 
+           enfrentam desafios, fazem escolhas e colhem as consequências 
+           de suas ações, tudo isso em um tabuleiro de 64 casas que se tornou
+            um símbolo de estratégia e criatividade.
+
+       </p>
+       <br><br><br><br>
+    </div>
+        
+    
+</head>
+
+
+    
+</body>
+</html>

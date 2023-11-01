@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300;500&family=Didact+Gothic&family=Libre+Franklin:wght@300&family=Poppins&family=Red+Hat+Display:wght@400;500&family=Urbanist&display=swap" rel="stylesheet">
+    <title>Site de Xadrez</title>
+    <style>
+
+        /* Reset de estilos para remover margens e preenchimentos padrão */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        .neve{width:100%; height:100%; position:absolute;}
+                .neve{
+                      background-color: black;
+                      background-image: url('snow1.png'), url('snow2.png'), url('snow3.png');  
+                      animation: snow 14s linear infinite;
+                          }     
+                 @keyframes snow {
+                            0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+                            100% {background-position: 500px 1000px, 400px 400px, 300px 300px}
+                                 }
+        /* Estilos para o corpo da página */
+        body {
+            
+            background-position: center;
+            background-position: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos para o cabeçalho (header) */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.3rem;
+            background: rgba(45, 24, 17, 0.2);
+            backdrop-filter: blur(8px);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            z-index: 100;
+            
+        }
+        .logo {
+          font-size:2rem;
+          color: #FFF;
+          text-decoration: none;
+          font-weight: 700;
+          transition: 0.6s;
+          text-shadow: #FFF 0 0 30px;
+        }
+        .logo:hover {
+            color: #000000;
+            text-shadow: #ffffff 0 0 30px;
+            transition: 0.6s;
+        }
+        .navbar a {
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 550;
+            margin-left: 2.9rem;
+            transition: 1s;
+        }
+        .navbar a:hover {
+            font-size: 1.6rem;
+            text-decoration: none;
+            font-weight: 900;
+            font-style: bold;
+            text-shadow: #fff 0 0 20px;
+            transition: 0.3s;
+        
+            
+        }
+        
+        h1 { 
+            font-size: 2.5rem;
+            color: #FFF;
+            text-align: center;  
+            text-shadow: 
+               -1px -1px 0px #000000, 
+               -1px 1px 0px #000000,                    
+                1px -1px 0px #000000,                  
+                1px 0px 0px #000000;
+                text-shadow: #000 0 0 40px;
+        }
+        b {
+            font-style: bold;
+            font-style: italic;
+            text-shadow: #FFF 0 0 20px ;
+            transition: 0.6s;
+            text-decoration:solid;
+        }
+        b:hover {
+            color: black;
+            transition: 0.3s;
+            font-size: 2.5rem ;
+            font-style: bold;
+            ;
+        }
+
+        p.paragrafo {
+    color: rgb(244, 244, 244);
+        padding: 5px;
+        text-align:center;
+        font-size: 1.4rem;
+        letter-spacing: 0.3px;
+        margin: 2.7%;
+        padding: 30px;
+        border-radius: 15px;
+        background: #36302e;
+        box-shadow: inset 16px 16px 49px #626060,
+            inset -16px -16px 49px #0e0d0d;
+            text-shadow: #FFF 0 0 55px;
+        
+}
+#antigo {
+    background-color: #ffffff00;
+    color: rgb(244, 244, 244);
+        padding: 5px;
+        text-align:center;
+        font-size: 2rem;
+        letter-spacing: 0.3px;
+        margin: 2.7%;
+        padding: 30px;
+        
+            text-shadow: #FFF 0 0 30px;
+        
+}
+.subtitulo1 {
+    text-align: center;
+}
+img {
+    box-shadow: #ffffff84 0 0 70px;
+    border-radius: 3%;
+}
+table {
+  font-family: arial, sans-serif;
+  background-color: #000000eb;
+  color: #FFF;
+  border-collapse: collapse;
+  width: 80%;
+  margin-left: 10%;
+}
+
+td, th {
+  border: 2px solid #dddddd;
+  text-align: left;
+  padding: 15px;
+}
+
+
+
+        
+        
+        
+        
+    
+        
+
+    </style>
+</head>
+    <body>
+    <audio id="myAudio" loop>
+        <source src="audio.mp3" type="audio/mp3">
+        Seu navegador não suporta a reprodução de áudio.
+    </audio>
+
+    <script>
+        const audio = document.getElementById("myAudio");
+        let audioPlaying = false;
+
+        // Função para iniciar a reprodução de áudio quando o usuário clica
+        function playAudio() {
+            if (!audioPlaying) {
+                audio.play(); // Inicia a reprodução da música em loop
+                audioPlaying = true;
+            }
+        }
+
+        // Adiciona um ouvinte de eventos para o clique em qualquer parte da página
+        document.addEventListener("click", playAudio);
+    </script></body>
+<body class="neve">
+    <header class="header">
+                <a href="socorro.html" class="logo">ChessMe</a>
+        <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="historia.html">História</a>
+                <a href="form.html">Competir</a>
+                <a href="aprenda.html">Aprenda a jogar</a>
+                <a href="jogar.html">Jogar!</a>
+                <a href="ensinamentos.html"> Ensinamentos do Xadrez</a>
+        </nav>
+    </header><br><br><br><br><br><br><br><br><br><br>
+    <h1> No tabuleiro do xadrez, as peças são as <b>escolhas da vida</b>, os movimentos
+         são as <b>consequências</b> de nossas
+         ações, 
+        e o xeque-mate é a inevitável <b>manifestação</b> do final que aguarda a <b>todos nós.</b></h1>
+    <br><br><br><br><br><br> <br><br><br><br><br><br> <br><br><br><br><br><br>
+    <div class="container">
+        <center><img src="peca.jpg" width="1050px" height="650px"></center><br><br><br><br><br><br><br><br><br>
+        <h1>História do Xadrez</h1>
+        <p class="paragrafo">
+            <b class="subtitulo1">A História do Xadrez: Uma Dança Milenar de Estratégia e Intelecto</b><br><br>
+            
+            Você já se imaginou em um antigo palácio indiano, onde o sussurro dos cortinados de seda se mistura com o tilintar de jóias? Nesse cenário de magnificência, há séculos atrás, nasceu um dos jogos mais complexos e cativantes da história da humanidade - o xadrez.<br><br>
+            
+            A lenda conta que o xadrez surgiu nas margens do rio Ganges, no norte da Índia, por volta do século VI d.C. Seu nome original, "chaturanga", refletia a composição do exército indiano: elefantes, cavalaria, carros de guerra e infantaria, cada uma representada por uma peça. Os grandes mestres da época eram como estrategistas em um campo de batalha, movendo suas peças em um tabuleiro tático, com o objetivo de subjugar o rei inimigo.<br><br>
+            
+            Conforme o chaturanga viajava pela rota das caravanas da Índia para a Pérsia, tornou-se o "shatranj" e encontrou um novo público apaixonado no mundo islâmico. A riqueza intelectual dessa civilização contribuiu para o aprimoramento das regras e a evolução das peças.<br><br>
+            
+            No século X, o xadrez finalmente chegou à Europa, trazido por comerciantes árabes. À medida que cruzava fronteiras, o jogo adquiria características únicas em cada região, refletindo a cultura e a mentalidade de seu povo. Reis e rainhas, cavaleiros e bispos, torres e peões passaram a adornar o tabuleiro, representando a nobreza medieval.<br><br>
+            
+            Mas foi no Renascimento Europeu, durante o século XV, que o xadrez adquiriu a forma que conhecemos hoje. As regras modernas foram consolidadas, a rainha ganhou mobilidade e o roque foi introduzido, tornando o jogo mais dinâmico e estratégico.<br><br>
+            
+            O xadrez, entretanto, nunca foi apenas um jogo. Era uma metáfora da vida, uma batalha entre a mente e a vontade, onde cada movimento podia determinar o destino do rei. A nobreza e a elite intelectual se entregavam ao xadrez, e os grandes campeonatos se tornaram eventos de destaque, testemunhando a rivalidade entre gênios como Emanuel Lasker e Wilhelm Steinitz.<br><br>
+            
+            No século XX, o xadrez se tornou um palco global, com jogadores lendários como <strong> Fischer e Garry Kasparov</strong>, cujas partidas eletrizantes capturaram a imaginação de milhões em todo o mundo. O xadrez não era mais um jogo aristocrático, mas uma paixão universal, um teste supremo de habilidade mental.<br><br>
+    
+            Hoje, o xadrez vive uma nova era, graças à internet. Qualquer um pode jogar, aprender e competir online, democratizando o acesso ao jogo. O xadrez é um desafio, uma dança de estratégia e intelecto que transcende fronteiras e gerações.<br><br>
+    
+            À medida que você mergulha no mundo do xadrez, lembre-se de que este é mais do que um jogo. É uma jornada através da história, da cultura e da mente humana. É um espelho das nossas aspirações e desafios, onde cada movimento é uma história esperando para ser contada.<br><br>
+    
+            Então, prepare suas peças e comece sua própria história no tabuleiro. O xadrez espera por você, convidando-o a dançar essa dança milenar, onde a estratégia é a trilha sonora e o intelecto é o passo de dança.
+        </p><br><br><br>
+        <h1> Abaixo, alguns dos atuais campeões mundiais.</h1><br>
+        <table>
+            <tr>
+              <th>Campeão</th>
+              <th>Ano</th>
+              <th>País Anfitrião</th>
+            </tr>
+            <tr>
+              <td>Ding Liren</td>
+              <td>2023</td>
+              <td>Cazaquistão</td>
+            </tr>
+            <tr>
+              <td>Magnus Carlsen</td>
+              <td>2021</td>
+              <td>Emirados Árabes</td>
+            </tr>
+            <tr>
+              <td>Magnus Carlsen</td>
+              <td>2018</td>
+              <td>Inglaterra</td>
+            </tr>
+            <tr>
+              <td>Magnus Carlsen</td>
+              <td>2016</td>
+              <td>Estados Unidos</td>
+            </tr>
+            <tr>
+              <td>Magnus Carlsen</td>
+              <td>2014</td>
+              <td>Rússia</td>
+            </tr>
+            <tr>
+              <td>Magnus Carlsen</td>
+              <td>2013</td>
+              <td>Índia</td>
+            </tr>
+          </table><br><br>
+          <h1> Deu pra ver quem domina, né?</h1><br><br><br><br><br><br><br><br>
+        <center><img src="antigo.jpg.jpg" width="900px" height="650px"></center>
+        <p id="antigo"> Benjamin Franklin disputando uma partida de xadrez, quadro do artista Edward Harrison May (1824-1887).</p>
+        
+        
