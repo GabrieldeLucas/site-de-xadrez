@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300;500&family=Didact+Gothic&family=Libre+Franklin:wght@300&family=Poppins&family=Red+Hat+Display:wght@400;500&family=Urbanist&display=swap" rel="stylesheet">
+    <title>Site de Xadrez</title>
+    <style>
+
+        /* Reset de estilos para remover margens e preenchimentos padrão */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        .neve{width:100%; height:100%; position:absolute;}
+                .neve{
+                      background-color: black;
+                      background-image: url('snow1.png'), url('snow2.png'), url('snow3.png');  
+                      animation: snow 20s linear infinite;
+                          }     
+                 @keyframes snow {
+                            0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+                            100% {background-position: 500px 1000px, 400px 400px, 300px 300px}
+                                 }
+        /* Estilos para o corpo da página */
+        body {
+            
+            background-position: center;
+            background-position: cover;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+       
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #44444400;
+   
+}
+
+.card {
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow:hidden;
+    background-image: linear-gradient(#333, #333);
+    transition: all .5s;
+   
+}
+
+
+
+
+.card .img {
+    width: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-image: url('peca.jpg');
+    background-size: cover;
+    background-position: left;
+    transition: all .5s;
+    z-index: 2;
+    position: relative;
+    opacity: .8;
+}
+
+.card .img span {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 100;
+    font-style: italic;
+    transition: all .5s;
+}
+
+.card:hover .img {
+    width: 430px;
+    opacity: 1;
+}
+
+.card:hover .img span {
+    font-size: 28px;
+}
+
+.card .content {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+    
+}
+
+.card:hover .content {
+    height: 260px;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+   
+}
+
+.card .content p {
+    margin: 0;
+    
+}
+
+.card .content .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card .content .desc {
+    font-size: 14px;
+    font-weight: 100;
+    opacity: .8;
+    margin-top: 0px;
+}
+
+
+
+        /* Estilos para o cabeçalho (header) */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.3rem;
+            background: rgba(45, 24, 17, 0.2);
+            backdrop-filter: blur(8px);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            z-index: 100;
+            
+        }
+        .logo {
+          font-size:2rem;
+          color: #FFF;
+          text-decoration: none;
+          font-weight: 700;
+          transition: 0.6s;
+          text-shadow: #FFF 0 0 30px;
+        }
+        .logo:hover {
+            color: #000000;
+            text-shadow: #ffffff 0 0 30px;
+            transition: 0.6s;
+        }
+        .navbar a {
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 550;
+            margin-left: 2.9rem;
+            transition: 1s;
+        }
+        .navbar a:hover {
+            font-size: 1.6rem;
+            text-decoration: none;
+            font-weight: 900;
+            font-style: bold;
+            text-shadow: #fff 0 0 20px;
+            transition: 0.3s;
+        
+            
+        }
+        
+        h1 { 
+            font-size: 3.4rem;
+            color: #FFF;
+            text-align: center;  
+            text-shadow: 
+               -1px -1px 0px #000000, 
+               -1px 1px 0px #000000,                    
+                1px -1px 0px #000000,                  
+                1px 0px 0px #000000;
+                text-shadow: #000 0 0 40px;
+        }
+        b {
+            font-style: bold;
+            font-style: italic;
+            text-shadow: #FFF 0 0 30px ;
+            transition: 0.6s;
+            text-decoration:solid;
+        }
+        b:hover {
+            color: black;
+            transition: 0.6s;
+            font-size: 3.9rem ;
+            font-style: bold;
+            ;
+        }
+
+        p.paragrafo {
+    color: rgb(244, 244, 244);
+        padding: 5px;
+        text-align:center;
+        font-size: 1.4rem;
+        margin: 2.7%;
+        padding: 30px;
+        border-radius: 10px;
+        background: #36302eee;
+        box-shadow: inset 16px 16px 49px #626060,
+            inset -16px -16px 49px #0e0d0d;
+            text-shadow: #FFF 0 0 40px;
+        
+}
+
+        h1.caixa {
+            background-color: rgb(211, 209, 203); 
+            text-shadow:none;
+               
+        padding: 5px;
+        text-align:justify;
+        color: #000000;
+        font-size: 2rem;
+        
+        }
+        
+        .subtitulo2{
+            font-size: 2.1rem;
+            color: #FFF;
+            text-align: center;  
+            text-shadow: 
+               -1px -1px 0px #000000, 
+               -1px 1px 0px #000000,                    
+                1px -1px 0px #000000,                  
+                1px 0px 0px #000000;
+                text-shadow: #000 0 0 40px;
+        
+        }
+    
+        video {
+            display:flex;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        
+
+    </style>
+</head>
+    <body>
+    <audio id="myAudio" loop>
+        <source src="audio\audio.mp3" type="audio/mp3">
+        Seu navegador não suporta a reprodução de áudio.
+    </audio>
+
+    <script>
+        const audio = document.getElementById("myAudio");
+        let audioPlaying = false;
+
+        // Função para iniciar a reprodução de áudio quando o usuário clica
+        function playAudio() {
+            if (!audioPlaying) {
+                audio.play(); // Inicia a reprodução da música em loop
+                audioPlaying = true;
+            }
+        }
+
+        // Adiciona um ouvinte de eventos para o clique em qualquer parte da página
+        document.addEventListener("click", playAudio);
+    </script></body>
+
+<body class="neve">
+    <header class="header">
+                <a href="#" class="logo">ChessMe</a>
+        <nav class="navbar">
+                 <a href="index.html">Home</a>
+                <a href="historia.html">História</a>
+                <a href="form.html">Competir</a>
+                <a href="aprenda.html">Aprenda a jogar</a>
+                <a href="jogar.html">Jogar!</a>
+                <a href="ensinamentos.html"> Ensinamentos do Xadrez</a>
+        </nav>
+    </header><br><br><br><br><br><br><br><br><br><br>
+    <h1> Prepare-se para desvendar os <b>segredos</b> do tabuleiro.</h1>
+    <br><br><br><br><br><br>
+        <div>
+            <h1 class="subtitulo2"> Vamos para a função das peças.</h1>
+            
+                    
+            <div class="container">
+                <div class="card">
+                    <div>
+                        <img src="site-de-xadrez\img\rei.jpg" style="width: 560px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 500px;
+                        background-image: url('peca.jpg');
+                        background-size: cover;
+                        background-position: center;
+                        transition: all .5s;
+                        z-index: 2;
+                        position: relative;
+                        opacity: .8;">
+                        
+                    </div>
+    
+                    <div class="content">
+                        <span class="title">Rei</span>
+                        <p class="desc">Rei:
+
+                            O rei é a peça mais importante no xadrez, e a principal missão é protegê-lo a todo custo.<br>
+                            O rei pode mover-se uma casa em qualquer direção: horizontal, vertical ou diagonal.<br>
+                            Quando um rei é ameaçado de captura, diz-se que ele está em "xeque".<br>
+                            </p>
+                    </div>
+    
+                   
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div>
+                        <img src="site-de-xadrez\img\rainha.jpg" style="width: 560px;
+                        display: flex;
+                        height: 400px;
+                        background-image: url('peca.jpg');
+                        background-size: cover;
+                        background-position: center;
+                        transition: all .5s;
+                        z-index: 2;
+                        position: relative;
+                        opacity: .8;">
+                        
+                    </div>
+    
+                    
+                        <div class="content">
+                            <span class="title">Rainha</span>
+                            <p class="desc">Rainha:
+    
+                                A rainha é a peça mais poderosa, capaz de se mover tanto horizontal quanto verticalmente, quantas casas desejar.
+    Ela também pode mover-se na diagonal, cobrindo uma grande parte do tabuleiro.
+    A rainha é frequentemente usada para atacar e controlar o centro do tabuleiro.<br>
+                </p>
+                        </div>
+        
+                       
+                    </div>
+                </div>
+            </div>
+            <div style="float:right;" class="container">
+                <div class="card">
+                    <div>
+                        <img src="site-de-xadrez\img\torre.jpeg" style="width: 560px;
+                        display: flex;
+                        height: 400px;
+                        background-image: url('torre.jpeg');
+                        background-size: cover;
+                        background-position: center;
+                        transition: all .5s;
+                        z-index: 2;
+                        position: relative;
+                        opacity: .8;">
+                        
+                    </div>
+    
+                    <div class="content">
+                        <span class="title">Torre</span>
+                        <p class="desc">
+                           
+                            Torre :
+                            
+                            A torre é uma peça poderosa que pode ser muito influente durante o jogo.
+                            Ela move-se em linha reta, tanto na horizontal quanto na vertical, cobrindo várias casas em uma única direção.
+                            A torre não pode mover-se na diagonal, apenas ao longo das linhas horizontais e verticais do tabuleiro.
+                            A característica distintiva da torre é sua mobilidade em linha reta, o que a torna uma peça excelente para controlar colunas ou fileiras.
+                            A torre é frequentemente usada para:
+                            Controlar colunas abertas: Uma coluna sem peças próprias é chamada de "coluna aberta".
+
+                           <br>
+            </p>
+                    </div>
+    
+                   
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div>
+                        <img src="site-de-xadrez\img\bispo.jpg" style="width: 560px;
+                        display: flex;
+                        height: 400px;
+                        background-image: url('bispo.jpg');
+                        background-size: cover;
+                        background-position: center;
+                        transition: all .5s;
+                        z-index: 2;
+                        position: relative;
+                        opacity: .8;">
+                        
+                    </div>
+    
+                    
+                        <div class="content">
+                            <span class="title">Bispo</span>
+                            <p class="desc">O bispo é uma peça única no xadrez devido ao seu movimento diagonal.
+                                Cada jogador começa com dois bispos, um que se movimenta nas casas brancas e outro nas casas pretas.
+                                O bispo pode mover-se ao longo de uma diagonal, cobrindo casas da mesma cor em todo o tabuleiro.
+                                Devido a essa mobilidade diagonal, um bispo permanece sempre nas casas de sua cor original durante todo o jogo.
+                                O bispo é uma peça flexível que pode ser usada tanto para ataque quanto para defesa.
+                                Estrategicamente, os bispos são frequentemente usados para:
+                                Controlar diagonais: Um bispo pode exercer influência em múltiplas diagonais do tabuleiro, o que pode ser útil para controlar áreas específicas.<br>
+                </p>
+                        </div>
+        
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div>
+                        <img src="site-de-xadrez\img\peao.jpeg" style="width: 700px;
+                        display: flex;
+                        height: 450px;
+                        background-image: url('peao.jpeg');
+                        background-size: cover;
+                        background-position: center;
+                        transition: all .5s;
+                        z-index: 2;
+                        position: relative;
+                        opacity: .8;">
+                        
+                    </div>
+    
+                    
+                        <div class="content">
+                            <span class="title">Peão</span>
+                            <p class="desc">Peão:
+
+                                Os peões são as peças mais numerosas no xadrez, com oito peões para cada jogador no início do jogo.
+                                Os peões movem-se para frente uma casa por vez no tabuleiro, mas têm uma exceção no primeiro movimento, quando podem avançar duas casas.
+                                Para capturar outras peças, os peões movem-se diagonalmente para frente. Isso é diferente do movimento normal, que é sempre para frente.
+                                Quando um peão alcança a oitava fileira do tabuleiro adversário, ele é promovido a qualquer outra peça (exceto um rei), geralmente escolhendo uma rainha.
+                                Os peões são frequentemente usados para controlar o centro do tabuleiro nas fases iniciais do jogo.<br>
+                </p>
+                        </div>
+        
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div>
+                        <img src="site-de-xadrez\img\horse.jpg" style="width: 560px;
+                        display: flex;
+                        height: 500px;
+                        background-image: url('horse.jpg');
+                        background-size: cover;
+                        background-position: center;
+                        transition: all .5s;
+                        z-index: 2;
+                        position: relative;
+                        opacity: .8;">
+                        
+                    </div>
+    
+                    
+                        <div class="content">
+                            <span class="title">Cavalo</span>
+                            <p class="desc">Cavalo:
+
+                                O cavalo é uma peça única e peculiar no xadrez, devido ao seu movimento em forma de "L".
+                                O cavalo move-se duas casas em uma direção (horizontal ou vertical) e depois uma casa perpendicular a essa direção.
+                                O movimento do cavalo é o único no xadrez que permite "saltar" sobre outras peças no tabuleiro, o que o torna especialmente versátil.
+                                O cavalo é a única peça que não é bloqueada por outras peças; ele pode passar por cima delas.
+                                Devido ao seu movimento único, o cavalo é frequentemente usado para realizar movimentos táticos surpreendentes, como "forks" (ataques simultâneos a duas peças inimigas) e "skewers" (ataques em que uma peça ataca outra atrás dela).
+                               
+                </p>
+                        </div>
+        
+                       
+                    </div>
+                </div>
+            </div>
+            
+            <h1 class="subtitulo2"> Se interessou?<br> Veja esse vídeo para se aprofundar ainda mais no mundo dos tabuleiros.</h1><br><br><br><br><br>
+            <video width="420" heigh="340" controls="controls" >
+              <source src="site-de-xadrez\video\VID-20231024-WA0002.mp4" type="video/mp4"><br><br><br><br><br><br><br><br><br><br><br><br>
+            <object data="" width="320" height="240"><br><br><br><br><br><br><br><br>
+            </object></video>
+</body>

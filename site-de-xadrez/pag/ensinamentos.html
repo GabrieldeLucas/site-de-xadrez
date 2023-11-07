@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300;500&family=Didact+Gothic&family=Libre+Franklin:wght@300&family=Poppins&family=Red+Hat+Display:wght@400;500&family=Urbanist&display=swap" rel="stylesheet">
+    <title>Site de Xadrez</title>
+    <style>
+
+        /* Reset de estilos para remover margens e preenchimentos padrão */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        .neve{width:100%; height:100%; position:absolute;}
+                .neve{
+                      background-color: black;
+                      background-image: url('snow1.png'), url('snow2.png'), url('snow3.png');  
+                      animation: snow 20s linear infinite;
+                          }     
+                 @keyframes snow {
+                            0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+                            100% {background-position: 500px 1000px, 400px 400px, 300px 300px}
+                                 }
+        /* Estilos para o corpo da página */
+        body {
+            
+            background-position: center;
+            background-position: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos para o cabeçalho (header) */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.3rem;
+            background: rgba(45, 24, 17, 0.2);
+            backdrop-filter: blur(8px);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            z-index: 100;
+            
+        }
+        img {
+    box-shadow: #ffffff84 0 0 100px;
+    border-radius: 3%;
+}
+        .logo {
+          font-size:2rem;
+          color: #FFF;
+          text-decoration: none;
+          font-weight: 700;
+          transition: 0.6s;
+          text-shadow: #FFF 0 0 30px;
+        }
+        .logo:hover {
+            color: #000000;
+            text-shadow: #ffffff 0 0 30px;
+            transition: 0.6s;
+        }
+        .navbar a {
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 550;
+            margin-left: 2.9rem;
+            transition: 1s;
+        }
+        .navbar a:hover {
+            font-size: 1.6rem;
+            text-decoration: none;
+            font-weight: 900;
+            font-style: bold;
+            text-shadow: #fff 0 0 20px;
+            transition: 0.3s;
+        
+            
+        }
+        
+        h1 { 
+            font-size: 3.4rem;
+            color: #FFF;
+            text-align: center;  
+            text-shadow: 
+               -1px -1px 0px #000000, 
+               -1px 1px 0px #000000,                    
+                1px -1px 0px #000000,                  
+                1px 0px 0px #000000;
+                text-shadow: #000 0 0 40px;
+        }
+        b {
+            font-style: bold;
+            font-style: italic;
+            text-shadow: #FFF 0 0 30px ;
+            transition: 0.6s;
+            text-decoration:solid;
+        }
+        b:hover {
+            color: rgb(255, 255, 255);
+            transition: 0.6s;
+            text-shadow:#FFF 0 0 30px;
+            
+        }
+
+        p.paragrafo {
+    color: rgb(244, 244, 244);
+        padding: 5px;
+        text-align:center;
+        font-size: 1.4rem;
+        margin: 2.7%;
+        padding: 30px;
+        border-radius: 10px;
+        background: #36302eee;
+        box-shadow: inset 16px 16px 49px #626060,
+            inset -16px -16px 49px #0e0d0d;
+            text-shadow: #FFF 0 0 40px;
+        
+}
+
+        h1.caixa {
+            background-color: rgb(211, 209, 203); 
+            text-shadow:none;
+               
+        padding: 5px;
+        text-align:justify;
+        color: #000000;
+        font-size: 2rem;
+        
+        
+}
+
+.subtitulo1 {
+    text-align: center;
+font-size: 1.9rem;
+}
+.subtitulo1:hover {
+font-size: 1.9rem;
+color: #FFf;
+}
+        
+        
+    
+        
+
+    </style>
+</head>
+    <body>
+    <audio id="myAudio" loop>
+        <source src="site-de-xadrez\audio\audio.mp3" type="audio/mp3">
+        Seu navegador não suporta a reprodução de áudio.
+    </audio>
+
+    <script>
+        const audio = document.getElementById("myAudio");
+        let audioPlaying = false;
+
+        // Função para iniciar a reprodução de áudio quando o usuário clica
+        function playAudio() {
+            if (!audioPlaying) {
+                audio.play(); // Inicia a reprodução da música em loop
+                audioPlaying = true;
+            }
+        }
+
+        // Adiciona um ouvinte de eventos para o clique em qualquer parte da página
+        document.addEventListener("click", playAudio);
+    </script></body>
+<body class="neve">
+    <header class="header">
+                <a href="#" class="logo">ChessMe</a>
+        <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="historia.html">História</a>
+                <a href="form.html">Competir</a>
+                <a href="aprenda.html">Aprenda a jogar!</a>
+                <a href="jogar.html">Jogar!</a>
+                <a href="ensinamentos.html"> Ensinamentos do Xadrez</a>
+        </nav>
+    </header><br><br><br><br><br><br><br><br><br><br>
+    <h1> O xadrez nos ensina que um mínimo movimento pode mudar tanto uma <b>vida</b>, quanto um <b>jogo</b> .</h1>
+    <br><br><br><br><br><br> <br><br>
+    <div>
+        <p class="paragrafo">
+            <b class="subtitulo1">Como tomar decisões visando curto e longo prazo</b><br><br>
+            Hoje em dia, podemos afirmar que esta guerra traduzida pelo xadrez não 
+é mais uma batalha bélica, mas sim mental e espiritual. O xeque-mate é a busca 
+pela verdade, pela jogada perfeita, pelo belo e pelo mistério.<br>
+O xadrez é muito mais do que um jogo de tabuleiro; é um campo de batalha para a mente, um terreno fértil para o
+desenvolvimento da estratégia, da paciência e da visão de longo prazo.<br> Enquanto as peças se movem e os jogadores
+traçam suas estratégias, lições profundas sobre a vida e a tomada de decisões se desenrolam diante dos olhos dos
+entusiastas do xadrez. <br>
+<br>
+No xadrez, cada partida é um teste de nossa habilidade em equilibrar o presente com o futuro, uma lição sobre como
+tomar decisões que considerem tanto o curto quanto o longo prazo.<br> Os jogadores aprendem desde cedo que um movimento
+impulsivo pode levar a um xeque-mate rápido, enquanto uma jogada cuidadosamente planejada pode pavimentar o caminho
+para a vitória. Essa dualidade é um reflexo direto de como tomamos decisões em nossas vidas. <br>
+<br>
+No aspecto curto prazo, o xadrez nos ensina a pensar de forma tática e a antecipar as consequências imediatas de
+nossas ações. Cada movimento pode levar a uma vantagem momentânea, mas também pode criar vulnerabilidades no tabuleiro.
+Essa agilidade mental é uma habilidade valiosa no mundo real, onde as decisões impulsivas podem levar a resultados desastrosos. <br>
+<br>
+Além disso, o xadrez nos mostra a importância da adaptabilidade. À medida que o jogo se desenrola, é fundamental ajustar
+nossas estratégias conforme a situação muda. Essa flexibilidade é crucial não apenas no xadrez, mas também na vida, onde
+muitas vezes enfrentamos mudanças inesperadas e desafios que exigem respostas ágeis.
+</p><br><br><br><br><br><br>
+<div>
+    <div>
+        <p class="paragrafo">
+            <b class="subtitulo1"> Tomada de Decisões Sob Pressão</b><br><br>
+            Em uma partida de xadrez, o relógio está sempre correndo,
+             criando pressão para tomar decisões rápidas e eficazes. 
+             <br>Essa habilidade de lidar com a pressão é valiosa em situações de alta pressão na vida real.<br><br>
+             <b class="subtitulo1"> Adaptação à Mudança</b><br><br>
+             O xadrez ensina que as estratégias precisam se adaptar às mudanças nas circunstâncias.<br> Da mesma forma, na vida, 
+             precisamos ser flexíveis e ajustar nossos planos conforme as situações mudam.<br><br>
+             <b class="subtitulo1"> Aprender com a Derrota </b><br><br>
+             No xadrez, derrotas são inevitáveis, mas cada derrota pode ser uma lição.<br>
+              Aprender a perder com dignidade e analisar erros é crucial na vida,
+              onde o fracasso também pode ser um professor valioso.<br><br>
+             <b class="subtitulo1"> Persistência e Determinação</b><br><br>
+             Enfrentar um adversário igualmente determinado no xadrez ensina a nunca desistir. Isso se aplica a superar obstáculos na vida, onde a determinação pode levar a conquistas surpreendentes.<br><br>
+             <b class="subtitulo1"> Desenvolvimento do Intelecto</b><br><br>
+             Por fim, o xadrez é um exercício intelectual que melhora a concentração, a análise crítica e a resolução de problemas. Essas habilidades são inestimáveis para o desenvolvimento pessoal e profissional.<br><br>
+             <b class="subtitulo1"> Equilíbrio entre Risco e Recompensa</b><br><br>
+             No xadrez, arriscar muito pode levar à derrota, enquanto evitar riscos pode levar à estagnação. Encontrar o equilíbrio certo entre risco e recompensa é uma habilidade crucial na vida.<br><br>
+             <b class="subtitulo1"> Paciência e Planejamento de Longo Prazo</b><br><br>
+             O xadrez nos ensina que algumas vitórias exigem tempo e paciência. Às vezes, é necessário sacrificar peças no curto prazo para obter vantagem no longo prazo. Essa lição se aplica a metas de longo prazo na vida, como educação, carreira e relacionamentos.<br><br>
+
+             <b class="subtitulo1"> Pensamento Estratégico</b><br><br>
+             No xadrez, é preciso pensar várias jogadas à frente e considerar as implicações de cada movimento. Essa habilidade é transferível para o mundo real, onde a capacidade de planejar com antecedência pode nos ajudar a alcançar nossos objetivos pessoais e profissionais.<br><br><br>
+             </p><br><br><br><br>
+             <center><img src="site-de-xadrez\img\idoso.jpg" width="1050px" height="650px"></center><br><br><br>
+             <center><img src="site-de-xadrez\img\crianca.jpg" width="1050px" height="650px"></center><br><br><br>
